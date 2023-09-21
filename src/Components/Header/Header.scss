@@ -1,0 +1,14 @@
+@import "../../Styles/colors.scss";
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 55px;
+  width: 100vh;
+  background-color: $white;
+}

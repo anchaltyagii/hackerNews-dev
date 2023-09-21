@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+// import * as service from "../Services/index";
+import { newsUrl } from "../../Redux/Services";
+import Layout from "../../Components/Layout/Layout";
 
-const index = () => {
-  return <div>Home page</div>;
+const Index = () => {
+  useEffect(() => {
+    // newsUrl();
+  }, []);
+  return (
+    <div>
+      <Layout>Home Page</Layout>
+    </div>
+  );
 };
 
-export default index;
+export default Index;
