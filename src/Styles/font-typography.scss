@@ -1,0 +1,5 @@
+@mixin typography($weight, $size) {
+  font-family: "Work Sans", sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+}

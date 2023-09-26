@@ -1,0 +1,55 @@
+@import "../../Styles/index.scss";
+
+.news_time_container {
+  padding: 25px;
+  border-radius: 5px;
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid lightgray;
+
+  h3 {
+    margin: 0px;
+    @include typography(600, 24px);
+    color: $darkGrey;
+  }
+
+  span {
+    @include typography(600, 18px);
+    color: $darkGrey;
+  }
+}
+
+.news-wrapper {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $lightBorder;
+
+  .news-title-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 25px;
+
+    h6 {
+      margin: 0px;
+      @include typography(600, 18px);
+      color: $darkGrey;
+    }
+
+    span {
+      color: gray;
+    }
+  }
+
+  .news-details-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 25px;
+    @include typography(400, 12px);
+  }
+}
