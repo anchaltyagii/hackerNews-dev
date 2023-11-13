@@ -1,1 +1,1 @@
-export { newsUrl } from "./Service";
+export { newsUrl, newsUrlById } from "./Service";
