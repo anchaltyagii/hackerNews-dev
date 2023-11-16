@@ -1,0 +1,46 @@
+@import "../../Styles/index.scss";
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 24px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 50px;
+  // width: 100%;
+  background-color: $white;
+  box-shadow: 0px 2px 12px -4px #00000026;
+
+  .hacker-news-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .hacker-news-icon {
+      width: 40px;
+      height: 40px;
+
+      img {
+        border-radius: 4px;
+      }
+    }
+
+    h5 {
+      margin: 0px;
+      @include typography(600, 16px);
+      color: $darkGrey;
+    }
+  }
+
+  .header-tabs-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: auto;
+  }
+}

@@ -1,0 +1,24 @@
+@import "../../Styles/index.scss";
+
+.tabs-wrapper {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  border: none;
+  cursor: pointer;
+  color: grey;
+  @include typography(400, 14px);
+}
+
+.active {
+  color: $orange;
+  border-bottom: 2px solid $orange;
+  transition: 0.1s linear;
+}
+
+.tab-icon {
+  margin-right: 12px;
+}
