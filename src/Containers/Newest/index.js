@@ -5,38 +5,46 @@ import * as actions from "../../Redux/Actions/index";
 import Layout from "../../Components/Layout/Layout";
 import moment from "moment/moment";
 import "./index.scss";
+import Pagination from "@mui/material/Pagination";
 import { useDispatch } from "react-redux";
 
 const Index = () => {
   const [newsId, setNewsId] = useState([]);
   const [news, setNews] = useState([]);
+  const [page, setPage] = useState(1);
 
   const dispatch = useDispatch();
 
   const date = new Date();
 
+  // const page = 2;
+
   useEffect(() => {
     dispatch(
-      actions.getNewsIdAction((res) => {
+      actions.getNewsIdAction(page, (res) => {
         if (res) {
-          console.log("api res", res);
-          setNewsId(res);
+          // console.log("api res", res);
+          setNews(res);
         }
       })
     );
 
     if (newsId) {
-      for (let i = 0; i < newsId.length; i++) {
-        dispatch(
-          actions.getNewsByIdAction(newsId[i], (res) => {
-            if (res) {
-              news.push(res);
-            }
-          })
-        );
-      }
+      // for (let i = 0; i < newsId.length; i++) {
+      //   dispatch(
+      //     actions.getNewsByIdAction(newsId[i], (res) => {
+      //       if (res) {
+      //         news.push(res);
+      //       }
+      //     })
+      //   );
+      // }
     }
-  }, [newsId]);
+  }, [page]);
+
+  const handleChange = () => {
+    setPage(page + 1);
+  };
 
   return (
     <>
@@ -45,7 +53,6 @@ const Index = () => {
           <h3>{`${moment(date).format("DD MMMM YYYY")}`}</h3>
           <span>{`Tuesday [${date.getHours()}:${date.getMinutes()}]`}</span>
         </div>
-
         <div>
           {news?.map((news, key) => {
             return (
@@ -56,16 +63,25 @@ const Index = () => {
                   </a>
                 </div>
                 <div className="news-details-wrapper">
-                  <div>{news.url}</div>
-                  <div>{news.by}</div>
-                  <div>{news.score} Points</div>
-                  <div> {news.descendants} Comments </div>
-                  {/* <div> 1 hour ago</div> */}
+                  <div>{news.domain}</div>
+                  <div>{news.user}</div>
+                  <div>{news.points} Points</div>
+                  <div> {news.comments_count} Comments </div>
+                  <div> {news.time_ago}</div>
                 </div>
               </div>
             );
           })}
         </div>
+        {/* <Pagination
+          count={10}
+          color="primary"
+          page={page}
+          onChange={handleChange}
+        /> */}
+        <button onClick={() => setPage(page - 1)}>Previous</button>
+        Page: {page}
+        <button onClick={() => setPage(page + 1)}>Next</button>
       </Layout>
     </>
   );

@@ -1,9 +1,9 @@
 import * as service from "../Services/index";
 import * as actionTypes from "../ActionTypes/ActionTypes";
 
-export const getNewsIdAction = (validate) => {
+export const getNewsIdAction = (page, validate) => {
   return async (dispatch) => {
-    const res = await service.newsUrl();
+    const res = await service.newsUrl(page);
     if (res) {
       validate(res);
       dispatch(ACTION_CREATOR(actionTypes.GET_NEWS_ID, res));

@@ -1,5 +1,6 @@
-import Home from "../Containers/News/index";
+import Home from "../Containers/Top/index";
 import Ask from "../Containers/Ask";
+import Newest from "../Containers/Newest";
 
 export const routes = [
   {
@@ -9,5 +10,9 @@ export const routes = [
   {
     path: "/ask",
     component: <Ask />,
+  },
+  {
+    path: "/newest",
+    component: <Newest />,
   },
 ];

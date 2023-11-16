@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import { routes } from "./Routes/RoutesPath";
 import Header from "./Components/Header/Header";
 
-// https://news.ycombinator.com/favorites?id=ancl&comments=t
 
 function App() {
   return (

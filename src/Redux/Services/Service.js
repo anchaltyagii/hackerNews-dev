@@ -1,12 +1,13 @@
 import axios from "axios";
 
-const baseUrl = "https://hacker-news.firebaseio.com/v0";
+const baseUrl = "https://api.hnpwa.com/v0/news";
+// https://api.hnpwa.com/v0/news
 
-export const newsUrl = async () => {
+export const newsUrl = async (page) => {
   try {
     const response = await axios({
       method: "GET",
-      url: `${baseUrl}/topstories.json?print=pretty`,
+      url: `${baseUrl}/${page}.json`,
     });
     return response.data;
   } catch (error) {
