@@ -1,1 +1,1 @@
-export { newsUrl, newsUrlById } from "./Service";
+export { newsUrl, newsUrlById, getNewestApi, getShowApi } from "./Service";

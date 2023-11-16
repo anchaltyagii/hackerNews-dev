@@ -17,7 +17,7 @@ const Index = () => {
 
   useEffect(() => {
     dispatch(
-      actions.getNewestAction(page, (res) => {
+      actions.getShowAction(page, (res) => {
         if (res) {
           setNews(res);
         }

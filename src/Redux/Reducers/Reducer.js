@@ -4,6 +4,8 @@ import * as actionTypes from "../ActionTypes/ActionTypes";
 const initialState = {
   getNewsId: null,
   getNewsById: null,
+  getNewest: null,
+  getShow: null,
 };
 
 const Reducer = (state = initialState, action) => {
@@ -13,6 +15,12 @@ const Reducer = (state = initialState, action) => {
 
     case actionTypes.GET_NEWS_BY_ID:
       return { ...state, getNewsById: action.payload };
+
+    case actionTypes.GET_NEWEST:
+      return { ...state, getNewest: action.payload };
+
+    case actionTypes.GET_SHOW:
+      return { ...state, getShow: action.payload };
 
     default:
       return state;

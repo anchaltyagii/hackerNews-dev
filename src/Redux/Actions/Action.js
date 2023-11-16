@@ -11,6 +11,26 @@ export const getNewsIdAction = (page, validate) => {
   };
 };
 
+export const getNewestAction = (page, validate) => {
+  return async (dispatch) => {
+    const res = await service.getNewestApi(page);
+    if (res) {
+      validate(res);
+      dispatch(ACTION_CREATOR(actionTypes.GET_NEWEST, res));
+    }
+  };
+};
+
+export const getShowAction = (page, validate) => {
+  return async (dispatch) => {
+    const res = await service.getShowApi(page);
+    if (res) {
+      validate(res);
+      dispatch(ACTION_CREATOR(actionTypes.GET_SHOW, res));
+    }
+  };
+};
+
 export const getNewsByIdAction = (id, validate) => {
   return async (dispatch) => {
     const res = await service.newsUrlById(id);

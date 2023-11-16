@@ -9,6 +9,7 @@ const Header = () => {
   const [newsTabs, setNewsTabs] = useState(true);
   const [newestTabs, setNewestTabs] = useState(false);
   const [bestTabs, setBestTabs] = useState(false);
+  const [showTabs, setShowTabs] = useState(false);
 
   const { hacker_news_icon } = icon;
 
@@ -18,6 +19,7 @@ const Header = () => {
   const handleNews = () => {
     setNewsTabs(true);
     setNewestTabs(false);
+    setShowTabs(false);
     setBestTabs(false);
     navigate("/");
   };
@@ -26,6 +28,8 @@ const Header = () => {
     setNewsTabs(false);
     setNewestTabs(true);
     setBestTabs(false);
+    setShowTabs(false);
+
     navigate("/newest");
   };
 
@@ -33,7 +37,16 @@ const Header = () => {
     setNewsTabs(false);
     setNewestTabs(false);
     setBestTabs(true);
+    setShowTabs(false);
     navigate("/best");
+  };
+
+  const handleShow = () => {
+    setNewsTabs(false);
+    setNewestTabs(false);
+    setBestTabs(false);
+    setShowTabs(true);
+    navigate("/show");
   };
 
   return (
@@ -54,6 +67,11 @@ const Header = () => {
           title="New"
           active={location.pathname === "/newest" && true}
           onClick={handleNew}
+        />
+        <Tabs
+          title="Show"
+          active={location.pathname === "/show" && true}
+          onClick={handleShow}
         />
         <Tabs
           title="Best"
