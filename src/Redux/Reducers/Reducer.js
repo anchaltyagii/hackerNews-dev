@@ -6,6 +6,7 @@ const initialState = {
   getNewsById: null,
   getNewest: null,
   getShow: null,
+  getAsk: null,
 };
 
 const Reducer = (state = initialState, action) => {
@@ -21,6 +22,9 @@ const Reducer = (state = initialState, action) => {
 
     case actionTypes.GET_SHOW:
       return { ...state, getShow: action.payload };
+
+    case actionTypes.GET_ASK:
+      return { ...state, getAsk: action.payload };
 
     default:
       return state;

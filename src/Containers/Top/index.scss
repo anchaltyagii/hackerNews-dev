@@ -23,7 +23,7 @@
 
 .news-wrapper {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   border-bottom: 1px solid $lightBorder;
 
   .news-title-wrapper {
@@ -60,4 +60,12 @@
     padding: 10px 25px;
     @include typography(400, 12px);
   }
+}
+
+.upvote-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19%;
+  gap: 30px;
 }

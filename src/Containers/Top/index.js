@@ -6,6 +6,7 @@ import Layout from "../../Components/Layout/Layout";
 import moment from "moment/moment";
 import "./index.scss";
 import Pagination from "@mui/material/Pagination";
+import { ArrowUpward, VisibilityOffRounded } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 
 const Index = () => {
@@ -56,20 +57,35 @@ const Index = () => {
         <div>
           {news?.map((news, key) => {
             return (
-              <div key={key} className="news-wrapper">
-                <div className="news-title-wrapper">
-                  <a href={news.url} target="_blank">
-                    <span>{`${key + 1}. `}</span> <h6>{news.title}</h6>
-                  </a>
+              <>
+                <div key={key} className="news-wrapper">
+                  <div style={{width: "60%"}}>
+                    <div className="news-title-wrapper">
+                      <a href={news.url} target="_blank">
+                        <span>{`${key + 1}. `}</span> <h6>{news.title}</h6>
+                      </a>
+                    </div>
+                    <div className="news-details-wrapper">
+                      <div>{news.domain}</div>
+                      <div>{news.user}</div>
+                      <div>{news.points} Points</div>
+                      <div> {news.comments_count} Comments </div>
+                      <div> {news.time_ago}</div>
+                    </div>
+                  </div>
+
+                  <div className="upvote-icon-wrapper">
+                    <ArrowUpward
+                      titleAccess="UpVote"
+                      style={{ cursor: "pointer" }}
+                    />
+                    <VisibilityOffRounded
+                      titleAccess="Hide"
+                      style={{ cursor: "pointer" }}
+                    />
+                  </div>
                 </div>
-                <div className="news-details-wrapper">
-                  <div>{news.domain}</div>
-                  <div>{news.user}</div>
-                  <div>{news.points} Points</div>
-                  <div> {news.comments_count} Comments </div>
-                  <div> {news.time_ago}</div>
-                </div>
-              </div>
+              </>
             );
           })}
         </div>

@@ -39,6 +39,18 @@ export const getShowApi = async (page) => {
   }
 };
 
+export const getAskApi = async (page) => {
+  try {
+    const response = await axios({
+      method: "GET",
+      url: `${baseUrl}/ask/${page}.json`,
+    });
+    return response.data;
+  } catch (error) {
+    console.log("Error", error);
+  }
+};
+
 export const newsUrlById = async (id) => {
   try {
     const response = await axios({

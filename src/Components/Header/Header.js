@@ -49,6 +49,10 @@ const Header = () => {
     navigate("/show");
   };
 
+  const handleAsk = () => {
+    navigate("/ask");
+  };
+
   return (
     <div className="header-container">
       <div className="hacker-news-icon-wrapper">
@@ -62,6 +66,11 @@ const Header = () => {
           title="Top"
           active={location.pathname === "/" && true}
           onClick={handleNews}
+        />
+        <Tabs
+          title="Ask"
+          active={location.pathname === "/ask" && true}
+          onClick={handleAsk}
         />
         <Tabs
           title="New"

@@ -1,1 +1,1 @@
-export { getNewsIdAction, getNewsByIdAction, getNewestAction, getShowAction } from "./Action";
+export { getNewsIdAction, getNewsByIdAction, getNewestAction, getShowAction, getAskAction } from "./Action";

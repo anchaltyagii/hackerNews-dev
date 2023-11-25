@@ -31,6 +31,16 @@ export const getShowAction = (page, validate) => {
   };
 };
 
+export const getAskAction = (page, validate) => {
+  return async (dispatch) => {
+    const res = await service.getAskApi(page);
+    if (res) {
+      validate(res);
+      dispatch(ACTION_CREATOR(actionTypes.GET_ASK, res));
+    }
+  };
+};
+
 export const getNewsByIdAction = (id, validate) => {
   return async (dispatch) => {
     const res = await service.newsUrlById(id);
